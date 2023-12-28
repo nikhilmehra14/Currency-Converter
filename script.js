@@ -1,4 +1,4 @@
-const BASE_URL = "https://g.co/finance/";
+const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
 
 const dropDownSelect = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
@@ -9,13 +9,8 @@ const icon = document.querySelector(".arrow");
 
 for (let select of dropDownSelect) {
   for (let currencyCode in currencyListName) {
-    // console.log(currencyCode);
-    // console.log(currencyListName[currencyCode].code);
     const currency = currencyListName[currencyCode].code;
-    // console.log("Currency:", currency);
-    // console.log("Currency code:", currencyCode);
     const countName = currencyListName[currencyCode].name;
-    // console.log("country Name:", countName);
 
     let newOption = document.createElement("option");
     newOption.innerText = `${countName} - ${currencyCode}`;
@@ -64,8 +59,8 @@ const updateExchangeRate = async () => {
     amtVal = 1;
     amount.value = "1";
   }
-  // console.log(fromCurrency.value, toCurrency.value);
-  const URL = `${BASE_URL}${fromCurrency.value}-${toCurrency.value}`;
+ 
+  const URL = `${BASE_URL}${fromCurrency.value.toLowerCase()}/${toCurrency.value.toLowerCase()}.json`;
   let response = await fetch(URL);
   let data = await response.json();
   let rate = data[toCurrency.value.toLowerCase()];
