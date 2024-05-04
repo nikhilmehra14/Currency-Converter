@@ -1,5 +1,5 @@
-const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
-
+//const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
+const Base_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/";
 const dropDownSelect = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
 let fromCurrency = document.querySelector(".from select");
